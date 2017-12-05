@@ -1,0 +1,652 @@
+/* ROOMS AUTH GR / SCHEDULER */
+/* some custom css to overwrite base and specific styles or too add some new ones */
+
+
+body {
+	background:#fbfbfb;
+}
+
+/* HEADER */
+
+#header {
+	border-top: 3px solid #FFC600;
+	padding-bottom: 1em;
+}
+
+#header_logo {
+	width: 36px;
+	height: 36px;
+	display: inline;
+}
+
+/* Content */
+
+#content{
+	background: #fbfbfb;
+	padding-bottom: 4em;
+	min-width: 0;
+}
+
+#content_centered_subarea{
+	padding: 1em 5em;
+	max-width: none;
+
+}
+
+#content_info_columns{
+	padding-top: 20px;
+}
+
+#banner_box_title{
+	height: auto;
+	padding:2em 0em;
+}
+
+#banner_box_left{
+	float:none;
+}
+
+#banner_text_servicename{
+	top:0;
+	color: #757575;
+}
+
+#banner_login_button_specific{
+	height: auto!important;
+	padding: 1.6em 0!important;
+}
+
+#content_banner_container{
+	height:90px;
+}
+
+#content_title_second{
+	margin-bottom:1em;
+	text-align: center;
+}
+
+#content_info_columns .row{
+	margin:0;
+}
+
+.input-group-addon{
+	font-weight: 600;
+}
+
+
+
+.input-group[class*=col-]{
+	text-align: left;
+	float: left;
+}
+
+.input-group:not(:last-child){
+	padding-right: 1em;
+}
+
+.input-group > div{
+	margin-right: 1em;
+	display: inline-block;
+}
+
+/* ROOM PAGE */
+/* --------- */
+/* Room calendar */
+
+#room_info {
+	margin-bottom: 1.2em !important;
+	padding: 2em;
+	border-radius: 4px;
+}
+
+#room_info .room_image{
+	width: 12em;
+	background:rgba(0,0,0,.05);
+	box-shadow:0px 0px 0px 3px #CACACA;
+	border-radius: 4px;
+	background-size: cover!important;
+}
+
+#room_info > span:not(:first-child){
+	margin-left: 1em;
+	padding-left: 1em;
+}
+
+#room_info .type{
+	font-weight: 800;
+	font-size: 0.75em;
+	opacity:0.5;
+}
+
+#room_info .name{
+	font-weight: 600;
+	font-size:1.3em;
+}
+
+#room_info .code{
+	opacity: 0.3;
+	margin-left:0.5em;
+	font-weight:600;
+}
+
+
+#room_info .unitName{
+	font-weight: 600;
+}
+
+#room_info .buildingName,
+#room_info .floor,
+#room_info .name,
+#room_info .code,
+#room_info .unitName{
+	display: inline-block;
+	vertical-align:middle;
+}
+
+#room_info .buttons {margin-top: 0.8em;}
+
+#room_info .buttons > span{ display:inline-block}
+
+#room_warning label{
+	padding: 0.85em;
+}
+
+
+.rooms_calendar_options{
+	display:none;
+	text-align:left;
+}
+
+body.calendar .rooms_calendar_options{
+	display: block;
+
+}
+
+
+.rooms_calendar_options a i.fa{
+	padding:0 0.2em;
+}
+
+/* COURSE PAGE */
+/* --------- */
+/* Course calendar */
+
+#course_info, #teacher_info {
+	margin: 2em;
+	padding: 2em;
+	background-color: #f5f5f5;
+	border-radius: 4px;
+	text-align: left;
+	font-size: 15px;
+}
+
+#course_info #title {
+	font-size: 1.4em;
+	color: #555;
+}
+
+#course_info #code, #teacher_info #code{
+	opacity: 0.3;
+	margin-left:0.5em;
+	font-weight:600;
+}
+
+#events-table {
+	text-align: left;
+	font-size: 1.2em;
+}
+
+.btn-elearning {
+	background-color: #30ADD1;
+	color: white;
+}
+
+#course_info .content, #teacher_info .content {
+	margin-bottom: 2em;
+}
+
+#course_info .label-course, #teacher_info .label-course{
+	color: #999;
+	letter-spacing: 1px;
+}
+
+#course_warning label{
+	padding: 0.85em;
+}
+
+#events-table {
+	font-size: 15px;
+}
+
+#events-table h2 {
+	font-size: 1.4em;
+	color: #555;
+}
+
+/* FILTERS */
+/* ------- */
+
+/* Schedule filters */
+
+body[data-mycourses="true"] #content_info_columns .filters .dropdowns{
+	display:none;
+}
+
+
+.checkbox{
+	text-align:left;
+	margin-top:0;
+	padding: 0;
+}
+
+.filters{
+	margin:0;
+	margin-bottom: 1em!important;
+}
+
+.filters .input-group{
+	margin-bottom: 1em;
+}
+
+/* obsolete ! */
+/* do not display odd */
+.filters .input-group .display-only-even > option:nth-child(2n):not(:first-child){
+	display: none;
+}
+
+/* do not display even */
+.filters .input-group .display-only-odd > option:nth-child(2n):not(:first-child){
+	display: none;
+}
+
+
+.filters .input-group:last-of-type{
+	margin-right: 0px;
+}
+
+.events-status{
+	min-height: 3.5rem;
+	text-align:left;
+}
+
+.events-status .progress{
+	height: 10px;
+	display:none;
+	margin-bottom:5px;
+}
+
+.events-status .progress-bar{
+	width: 2%;
+}
+
+.events-status .logs{
+	display: none;
+}
+
+.events-status .results{
+	text-align: left;
+	color: rgba(0,0,0,.5);
+	padding: 0px;
+	font-weight: 800;
+}
+
+.events-status .results label {
+  display: inline-block;
+  white-space: normal;
+	font-size: 100%
+}
+
+
+.events-status .results .label:not(.label-warning){
+	font-weight: 600;
+	color: rgba(163, 163, 163, 1)!important;
+	background: transparent;
+	display: inline-block;
+	max-width: 310px;
+	padding: 0.5em;
+}
+
+/* Calendar */
+
+#calendar.codesOn .event_code,
+#calendar .event_title{
+	display: inline-block;
+}
+
+#calendar .event_code,
+#calendar.codesOn .event_title{
+	display:none;
+}
+
+#calendar .fc-event .fc-bg {
+	background: none;
+}
+
+/* */
+
+.events-status.error .logs{
+	display:inline-block;
+}
+
+.events-status.loading .progress{
+	display:block;
+}
+
+.events-status.loading .results{
+	display:none;
+}
+
+.events-status.results-on .results{
+	display: inline-block;
+}
+
+/* ROOMS TAB */
+
+/* Filters */
+
+
+#rooms_filters{
+	/* displays when datatable is rdy via js */
+	padding: 1em 0em;
+	margin-bottom:2em!important;
+}
+
+#rooms_filters select,
+#rooms_filters .selectize{
+	padding: 0.5em 0em;
+	text-align:left;
+}
+
+#rooms_list.rdy .loading_indicator{
+	display:none;
+}
+
+#rooms_list.rdy #rooms_filters{
+	display: block;
+}
+
+#calendar_title{
+	margin-bottom:1em;
+	text-align:left;
+	display: inline-block;
+}
+
+
+/* TABLE - datatables */
+
+/* table panchara style */
+
+#rooms-table.table-panchara thead tr{
+	background: rgb(237, 237, 237);
+}
+
+#rooms-table.table-panchara thead tr > th{
+	border-bottom-color: transparent;
+}
+
+#rooms-table.table-panchara thead tr > th:not(.sorting_disabled):hover{
+	border-bottom-color: rgb(255, 198, 0);
+}
+
+#rooms-table_wrapper #rooms-table_filter,
+#rooms-table_wrapper #rooms-table_info{
+	text-align:left;
+}
+
+#rooms-table_wrapper #rooms-table_length,
+#rooms-table_wrapper #rooms-table_paginate{
+	text-align:right;
+}
+
+table#rooms-table.table-panchara td.room_unit,
+table#rooms-table.table-panchara td.room_capacity,
+table#rooms-table.table-panchara td.room_statistic_metric,
+table#rooms-table.table-panchara td.room_type,
+table#rooms-table.table-panchara td.room_building{
+	font-weight: 600;
+	font-size: 0.75em;
+}
+
+.default-image {
+	background-image: url("/img/photos/noimage.jpg");
+	min-width: 170px;
+	min-height: 130px;
+}
+
+table#rooms-table.table-panchara .first_img{
+	display:inline-block;
+	width: 120px;
+	height: 70px;
+
+	position:relative;
+
+	/*background-color: #D8D8D8;*/
+	background-image: url("/img/photos/noimage.jpg");
+
+	webkit-background-size: cover!important;
+	background-size: cover!important;
+}
+
+table#rooms-table.table-panchara a.first_img:hover{
+	box-shadow: 0px 0px 0px 2px #428bca;
+}
+
+table#rooms-table.table-panchara .first_img i.fa{
+	position: absolute;
+	top: 43%;
+	left: 43%;
+
+	font-size: 18px;
+}
+
+table#rooms-table.table-panchara .first_img .progress{
+	height: 0.2em;
+	width: 50%;
+	position: relative;
+	left: 25%;
+	top: 49%;
+}
+
+table#rooms-table.table-panchara .first_img .progress .progress-bar{
+	animation:         PROGRESS 800ms infinite;
+
+}
+
+@-webkit-keyframes PROGRESS {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+@-moz-keyframes PROGRESS {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+@-o-keyframes PROGRESS {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+@keyframes PROGRESS {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+
+
+table#rooms-table.table-panchara .room_name{
+	font-weight: 600;
+}
+
+table#rooms-table.table-panchara tr > td:first-child,
+table#rooms-table.table-panchara tr > th:first-child,
+table#rooms-table.table-panchara tr > td.room_image,
+table#rooms-table.table-panchara tr > th.room_image,
+table#rooms-table.table-panchara tr > td.room_unit,
+table#rooms-table.table-panchara tr > th.room_unit,
+table#rooms-table.table-panchara tr > td.room_capacity,
+table#rooms-table.table-panchara tr > th.room_capacity,
+table#rooms-table.table-panchara tr > td.room_type,
+table#rooms-table.table-panchara tr > th.room_type,
+table#rooms-table.table-panchara tr > td.room_building,
+table#rooms-table.table-panchara tr > th.room_building,
+table#rooms-table.table-panchara tr > td.room_statistic_metric,
+table#rooms-table.table-panchara tr > th.room_statistic_metric{
+	width:1%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+table#rooms-table.table-panchara .room_primary_info{
+	padding:0.2em;
+}
+
+table#rooms-table.table-panchara .room_secondary_info > *:not(:last-child),
+table#rooms-table.table-panchara .room_primary_info > *:not(:last-child){
+	margin-right: 0.5em;
+}
+
+table#rooms-table.table-panchara .room_secondary_info{
+	margin-top:0.5em;
+}
+
+table#rooms-table{
+	max-width: 100%;
+	position: relative;
+}
+
+table#rooms-table tr{
+	text-align: left;
+}
+
+/*
+table#rooms-table tr > td:not(:nth-child(1)):not(:nth-child(2)),
+table#rooms-table tr > th:not(:nth-child(1)):not(:nth-child(2)){
+
+	width:0px;
+	text-align:center;
+}
+*/
+
+
+#rooms-table_wrapper .dataTables_length,
+#rooms-table_wrapper .dataTables_info{
+	text-align:left;
+}
+
+/* nav  */
+
+.nav.navbar-nav .nav-divider{
+	width: 1px;
+
+}
+
+/* Tabs */
+
+.nav.nav-tabs.my-tabs{
+	margin-bottom:1em;
+}
+
+/* USER TOP */
+
+#user-top{
+	display: inline-block;
+	position: relative;
+	margin-right: 1rem;
+	margin-left: 1rem;
+}
+
+#user-top > .btn{
+	margin-top: 0.7rem;
+	color: rgba(0,0,0,0.5);
+	font-weight: 800;
+	padding: 0.45em 0.7em;
+	background: rgba(255, 198, 0,.8);
+}
+
+#user-top > .btn:hover,
+#user-top > .btn:focus{
+	background: rgba(255, 198, 0,1);
+}
+
+#user-top > .btn .caret{
+	margin-left: 0.5em;
+}
+
+#user-top .dropdown-menu{
+	top: 4.1em;
+	border: none;
+}
+
+/* user icon */
+
+.user-icon{
+	background: rgba(0,0,0,.2);
+	color: rgba(0,0,0,.3);
+	width: 1.4em;
+	height: 1.4em;
+	display: inline-block;
+	border-radius: 1.2em;
+	font-size: 1.3em;
+	margin-right: 0.3em;
+	padding: 0.2em;
+	vertical-align: middle;
+}
+
+.user-icon > i.fa{
+vertical-align: top;
+}
+
+/* bootstrap fixes* */
+
+input, button, select, textarea{
+	font-family: 'Open Sans', 'Sans serif';
+}
+
+/* some classes */
+
+.paddingnone{
+	padding:0em!important;
+
+}
+
+.opacity-half{
+	opacity:0.5;
+}
+
+/* loader indicator */
+#loading {
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	position: fixed;
+	display: block;
+	opacity: .9;
+	background-color: #fff;
+	z-index: 99;
+	text-align: center;
+}
+#loading-image {
+	position: absolute;
+	top: 250px;
+	z-index: 600;
+}
+
+/* Responsive */
+
+@media (max-width: @screen-sm-max) {
+
+}
+
+@media (max-width:1199px){
+	.filters .input-group:first-child{
+		padding-right:0em;
+	}
+}
+
+@media(max-width:991px){
+	#header_secondary_nav .nav a{
+		font-size:0.85em;
+	}
+
+	.filters .input-group{
+		padding-right:0em;
+	}
+}

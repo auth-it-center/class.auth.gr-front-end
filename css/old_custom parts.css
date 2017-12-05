@@ -1,0 +1,168 @@
+/* FULL CALENDAR */
+
+#calendar .fc-header{
+	background: rgb(240, 240, 240);
+	border-top: 1px solid rgb(219, 219, 219);
+	border-left: 1px solid rgb(219, 219, 219);
+	border-right: 1px solid rgb(219, 219, 219);
+}
+
+#calendar .fc-header td{
+	vertical-align: middle;
+	padding:0.6em 1em;
+}
+
+#calendar .fc-header .fc-button{
+	margin-bottom:0em;
+}
+
+#calendar .fc-header .fc-header-title h2{
+	margin:0;
+
+	font-size: 1.6em;
+	font-weight: 600;
+}
+
+body[data-page="scheduler"] #calendar.first-time{
+	background: #eee;
+	border-radius: 4px;
+	border: 2px dashed rgba(0, 0, 0, 0.1);
+	font-weight: 600;
+	padding: 8em 2em;
+}
+
+body[data-page="scheduler"] #calendar:not(.first-time) .first-time-text{
+	display:none;
+}
+
+#calendar .fc-view table thead{
+	font-size: 0.70em;
+}
+
+#calendar .fc-view table thead tr th{
+	vertical-align: middle;
+	padding: 5px 0em;
+}
+
+#calendar .fc-view .fc-event:hover{
+	z-index: 999!important;
+}
+
+
+
+#calendar .fc-event{
+
+	background: #39677C;
+
+	box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+
+	cursor: default;
+	border-color: rgba(255,255,255,.4);
+
+	opacity:0.94;
+
+	transition: all 200ms linear;
+}
+
+#calendar .fc-event:hover{
+	opacity: 1;
+
+	box-shadow: 0px 0px 15px rgba(0,0,0,.5);
+}
+
+#calendar .fc-event[data-event-type="2"]{
+	background: rgb(210,169,64);
+}
+
+#calendar .fc-event .fc-event-time{
+	padding: 0em 0.3em;
+	background: rgba(255,255,255,0.2);
+	font-size: 0.9em;
+	color: rgba(255,255,255,0.7);
+}
+
+#calendar .fc-event-title{
+	color:white;	
+	padding: 0.3em;
+	font-weight: 800;
+	display: inline-block;
+}
+
+
+#calendar .fc-event{
+    background: #869E98!important; /*rgb(104, 129, 123)*/
+}
+
+/* color of events */
+
+
+#calendar .fc-event .fc-event-time{
+    background:#9CB3AD;
+    background:#C5CEC9;
+	background: #A6B2AB;
+}
+
+#calendar .fc-view-month .fc-event .fc-event-time{	
+	margin-left: 2px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}
+
+.fc-event[data-exam="1"] > .fc-event-inner{
+    background: rgba(255,255,255,0);
+}
+
+.fc-event[data-exam="2"] > .fc-event-inner{
+    background: rgba(255,255,255,0);
+}
+
+.fc-event[data-exam="3"] > .fc-event-inner{
+    background: rgba(255,255,255,0);
+}
+
+.fc-event[data-exam="4"] > .fc-event-inner{
+    background: rgba(255,255,255,0);
+}
+
+.fc-event[data-exam="5"] > .fc-event-inner{
+    background: rgba(255,255,255,0);
+}
+
+.fc-event[data-exam="6"] > .fc-event-inner{
+    background: rgba(255,255,255,0);
+}
+
+.fc-event[data-exam="7"] > .fc-event-inner{
+    background: rgba(255,255,255,0);
+}
+
+.fc-event[data-exam="8"] > .fc-event-inner{
+    background: rgba(255,255,255,0);
+}
+
+.fc-event[data-exam="9"] > .fc-event-inner{
+    background: rgba(255,255,255,0);
+}
+
+.fc-event[data-exam="10"] > .fc-event-inner{
+    background: rgba(255,255,255,0.05);
+}
+
+.fc-event[data-exam="11"] > .fc-event-inner{
+    background: rgba(255,255,255,0)
+}
+#calendar .fc-event[data-event-type="2"]{
+    background: #D2D78B;
+}
+
+
+
+
+/* popover - calendar's popover container is 'body' - might need rewriting selector */
+
+
+.popover-content{
+	font-size:0.8em;
+}
+

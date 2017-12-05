@@ -1,0 +1,27 @@
+.table_filter_search {
+  text-align: left;
+}
+
+.table_filter_search label {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table_filter_search input {
+	margin-left: 0.5em;
+	display: inline-block;
+}
+
+.table_filter_size {
+  text-align: right;
+}
+
+.table_filter_size label {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table_filter_size select {
+	width: 75px;
+	display: inline-block;
+}

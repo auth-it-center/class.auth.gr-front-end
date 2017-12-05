@@ -1,0 +1,21 @@
+#header
+{
+	border-top: 3px solid #FFC600;
+}
+
+#header_logo
+{
+	background-image: url('../img/it-icon.png');
+	background-repeat: no-repeat;
+	line-height: 44px;
+}
+
+#header_gotoservice
+{
+	/*display: none;*/
+}
+
+#header_languageSelector
+{
+	/*display: none;*/
+}

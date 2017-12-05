@@ -1,0 +1,133 @@
+img
+{
+	border-style: none
+}
+
+* {
+    outline: none;
+}
+
+
+#header
+{
+	background-color: #172028;
+	color: #dddddd;
+	
+	height: 75px;
+	min-width: 940px;
+	
+	font-size: 24px;
+	font-family: Arial;
+	
+	position: fixed;
+    width: 100%;
+	
+	z-index: 100;
+}
+
+.header_centered_subarea
+{
+	padding: 12px 20px 12px 20px;
+	margin:0 auto;
+}
+
+
+.header_part
+{	
+	float: right;
+	line-height: 45px;
+	margin-right: 40px;
+}
+
+
+.header_part a
+{
+	text-decoration:none;
+}
+
+
+
+/* -- Header Title ------------------------------*/
+
+#header_title
+{
+	float: left;
+	margin-left: 40px;
+	font-family: Arial;
+}
+
+#header_title a
+{
+	background-repeat: no-repeat;
+	background-position: left center;
+	display: block;
+	padding-left: 50px;
+	text-decoration:none;
+}
+
+#header_title_partA
+{
+	font-size: 24px;
+	font-family: 'Open Sans', Arial;
+	color: #CCCCCC;
+	position: relative;
+	top: 2px;
+}
+#header_title_partB
+{
+	font-size: 24px;
+	color: #FFFFFF;
+	font-family: 'Open Sans', Arial;
+	position: relative;
+	top: 2px;
+}
+#header_title_seperator
+{
+	font-size: 17px;
+	position: relative;
+	bottom: 1px;
+	color:#555555;
+	
+}
+#header_title_partC
+{
+	font-size: 13px;
+	color:#CBCBCB;
+	font-family: 'Open Sans', Arial;
+	position: relative;
+	top: 2px;
+}
+
+
+/* -- Language Selector ----------------------------*/
+
+#header_languageSelector
+{
+	color: #F0F0F0;
+	font-size: 15px;
+	font-family: 'Open Sans', Arial;
+}
+
+.languageSeperator
+{
+	color: #999999;
+}
+
+a.languageSelection
+{
+	color: #999999 !important;
+	cursor: pointer;
+}
+
+a.languageSelection:hover
+{
+	color: #FFFFFF !important;
+	cursor: pointer;
+}
+
+#languageSelected
+{
+	color: #F0F0F0 !important;
+}
+
+

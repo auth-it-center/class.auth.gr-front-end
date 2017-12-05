@@ -1,0 +1,124 @@
+/*http://cssmenumaker.com/css-drop-down-menu*/
+/* http://cssmenumaker.com/builder/684050 */
+
+#cssmenu
+{
+	height:37px;
+	display:block;
+	padding:0;
+	margin:5px auto;
+	/*border:1px solid;*/ /*border-radius:5px;*/
+} 
+#cssmenu > ul
+{
+	list-style:inside none;
+	padding:0;
+	margin:0;
+	background: #172028; /* added by ifeneris */
+} 
+
+#cssmenu > ul > li
+{
+	list-style:inside none; padding:0; margin:0; float:left; display:block;
+	
+	position:relative; /*next add by kmak*/
+	width: 200px; /* edited by ifeneris */
+	padding-top: 6px; /* edited by ifeneris */
+
+} 
+#cssmenu > ul > li > a
+{ 
+	outline:none;
+	display:block;
+	position:relative;
+	padding:12px 20px;
+	/*font:bold 13px/100% Arial, Helvetica, sans-serif;/* commented out by ifeneris*/
+	font:13px/100% 'Open Sans', Arial, Helvetica, sans-serif; /* added by ifeneris*/
+	font-size: 13px;
+	text-align:center;
+	text-decoration:none;
+	/*text-shadow:1px 1px 0 rgba(0,0,0, 0.4);*/ /* commented out by ifeneris */
+	cursor: default; /* added by ifeneris */
+} 
+#cssmenu > ul > li:first-child > a{/*border-radius:5px 0 0 5px;*/} 
+#cssmenu > ul > li > a:after{ content:''; position:absolute; /*border-right:1px solid;*/ top:-1px; bottom:-1px; right:-2px; z-index:99; } 
+#cssmenu ul li.has-sub:hover > a:after{top:0; bottom:0;} 
+#cssmenu > ul > li.has-sub > a:before{ content:''; position:absolute; top:18px; right:6px; /*border:5px solid transparent;*/ border-top:5px solid #fff; } 
+
+/*by kmak*/
+#cssmenu > ul > li.has-sub > a{
+	background-position: 155px center;/*added by kmak*/ /*edited by ifeneris*/
+	background-repeat: no-repeat;/*added by kmak*/
+	padding-right: 90px;/*added by kmak*/ /*edited by ifeneris*/
+	display:block;
+}
+
+#cssmenu > ul > li.has-sub:hover > a:before{top:19px; background: #172028; /* added by ifeneris */} 
+#cssmenu ul li.has-sub:hover > a
+{ 
+	/*background:#3f3f3f;*/
+	border-color:#172028; /* edited by ifeneris */
+	padding-bottom:13px; padding-top:13px; top:-1px; z-index:999;
+	background-color:#172028;/*added by kmak*/ /* edited by ifeneris */
+} 
+#cssmenu ul li.has-sub:hover > ul, #cssmenu ul li.has-sub:hover > div{display:block;} 
+#cssmenu ul li.has-sub > a:hover
+{
+	/*background:#3f3f3f;*/
+	border-color:#172028; /* edited by ifeneris */
+	background-color:#172028;/*added by kmak*/ /* edited by ifeneris */
+	background-repeat: no-repeat;/*added by kmak*/
+	background-position: 155px center;/*added by kmak*/ /* edited by ifeneris*/
+} 
+#cssmenu ul li > ul, #cssmenu ul li > div
+{
+	display:none; width:auto; /*position:absolute;*/ top:38px; padding:0px; 
+	background:#172028; /* edited by ifeneris */
+	/*border-radius:0 0 5px 5px;*/ z-index:999;
+} 
+#cssmenu ul li > ul
+{
+	width:200px; /*next add by kmak*/ /* edited by ifeneris*/
+	margin: 0;
+	background: #172028; /* added by ifeneris */
+} 
+#cssmenu ul li > ul li
+{
+	display:block;
+	list-style:inside none;
+	padding:0;
+	margin:0;
+	position:relative;
+	/*padding-right: 15px;/*added by kmak*/
+	border-bottom: 1px solid #000000; border-top: 1px solid #303030; /* added by ifeneris */
+	
+}
+
+#cssmenu ul li > ul li:hover, #cssmenu ul li > ul li:active
+{
+	background: #2C3D4C;
+}
+
+#cssmenu ul li > ul li a{ 
+
+	outline:none; display:block; position:relative; margin:0; padding:10px 75px 10px 20px; font:10pt Arial, Helvetica, sans-serif; text-decoration:none; 
+	color:#f0f0f0 !important;/* edited by ifeneris*/
+	/*text-shadow:1px 1px 0 rgba(0,0,0, 0.5); */ /* commented out by ifeneris */
+	
+	background-position: 155px center;/*added by kmak*/ /* edited by ifeneris*/
+	background-repeat: no-repeat;/*added by kmak*/
+} 
+
+#cssmenu, #cssmenu > ul > li > ul > li a:hover
+{ /*background:#3e698c; background:-moz-linear-gradient(top,  #3e698c 0%, #30576e 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#3e698c), color-stop(100%,#30576e)); background:-webkit-linear-gradient(top,  #3e698c 0%,#30576e 100%); background:-o-linear-gradient(top, #3e698c 0%,#30576e 100%); background:-ms-linear-gradient(top, #3e698c 0%,#30576e 100%); background:linear-gradient(top,  #3e698c 0%,#30576e 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e698c', endColorstr='#30576e',GradientType=0 );*/ 
+	/*box-shadow: 2px 2px 5px #000000; /*background-color:#3e698c;*/ /* added by kmak */
+
+	background-position: 155px center;/*added by kmak*/ /* edited by ifeneris */
+} 
+
+#cssmenu{border-color:#1b313d; /*next add by kmak - IE requirement gia na paei terma deksia */ float: right; } 
+#cssmenu > ul > li > a{/*border-right:1px solid #1b313d;*//* edited by ifeneris*/ color:#f0f0f0;} 
+#cssmenu > ul > li > a:after{border-color:#6696bd;} 
+#cssmenu > ul > li > a:hover{background:#436f93;} 
+#cssmenu li.last:hover { box-shadow: 0px 0px 5px #000000; } /* added by kmak */ /* edited by ifeneris */
+
