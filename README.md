@@ -6,6 +6,6 @@ Live at https://class.auth.gr.
 
 ## About
 
-The system offers information on the timetable courses program of the Departments. The Secretariats register the program for each semester, so that can be publicly available. 
+This calendaring application delivers information on the timetable of courses and classes taught in the university departments for each semester/period. The Registrars update the schedule each semester and make it publicly available. 
 
-Furthermore, students can attend their own diary based on their enrollment in lessons, and teachers respectively on the basis of assignment of their lessons.
+Furthermore, students can view or export their own personal calendar based on their enrollment in classes, and faculty can view or export their own personal calendar based on teaching assignments.
