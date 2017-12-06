@@ -1,9 +1,11 @@
-# class.auth.gr Front End
+# class.auth.gr Front End<img src="https://user-images.githubusercontent.com/6997990/33650415-90e07842-da6a-11e7-9f42-f8da1fd90f71.png" align="left" width="40">
 
-The Class Scheduling System of Aristotle Univesity of Thessaloniki
+The Class Scheduling System of [Aristotle Univesity of Thessaloniki](https://www.auth.gr/).
 
-## Σχετικά με την εφαρμογή
+Live at https://class.auth.gr.
 
-Το class.auth.gr είναι μία κεντρική πληροφοριακή εφαρμογή που εξυπηρετεί όλη την κοινότητα του ΑΠΘ, προσφέροντας πληροφορίες για το πρόγραμμα μαθημάτων, αλλά και εκδηλώσεων, στους χώρους του ΑΠΘ. Οι Γραμματείες των τμημάτων καταχωρούν το πρόγραμμα διδασκαλίας και την κατάληψη αιθουσών κάθε εξάμηνο, ώστε να διατίθεται δημόσια το ωρολόγιο πρόγραμμα. Επιπλέον, οι φοιτητές μπορούν να παρακολουθούν το προσωπικό τους ημερολόγιο, με βάση τις εγγραφές τους σε μαθήματα και οι διδάσκοντες αντίστοιχα με βάση την ανάθεση διδασκαλίας μαθήματος. 
+## About
 
-Η εφαρμογή αναπτύχθηκε από το ΚΗΔ του ΑΠΘ. Αξιοποιεί τα δεδομένα του συστήματος Ηλεκτρονικής Γραμματείας. Επιπλέον αντλούνται πληροφορίες από το Σύστημα Γεωγραφικών Πληροφοριών (GIS) του ΑΠΘ, που αναπτύχθηκε με το συντονισμό του Καθηγητή του Τμήματος Αγρονόμων Τοπογράφων Μηχανικών, κ. Σπυρίδωνα Σπαταλά, όπως η ενιαία κωδικοποίηση των ακινήτων και χώρων του Ιδρύματος, οι φωτογραφίες αιθουσών και οι κατόψεις ορόφων.
+The system offers information on the timetable courses program of the Departments. The Secretariats register the program for each semester, so that can be publicly available. 
+
+Furthermore, students can attend their own diary based on their enrollment in lessons, and teachers respectively on the basis of assignment of their lessons.
