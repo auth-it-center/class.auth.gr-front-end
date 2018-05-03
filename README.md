@@ -21,5 +21,5 @@ The solution is currently based on a mix of different technologies. AngularJS is
 Currently, only the front-end code is available. We intend to gradually open source the whole system to allow for a fully stand-alone solution.
 
 
-## <Acknowledgements
+## Acknowledgements
 We would like to thank Dataedo for providing the tool to document our database schema <img src="dataedo.png"/>
