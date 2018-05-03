@@ -9,3 +9,7 @@ Live at https://class.auth.gr.
 This calendaring application delivers information on the timetable of courses and classes taught in the university departments for each semester/period. The Registrars update the schedule each semester and make it publicly available. 
 
 Furthermore, students can view or export their own personal calendar based on their enrollment in classes, and faculty can view or export their own personal calendar based on teaching assignments.
+
+## acknowledgements
+
+We would like to thank Dataedo for providing the tool to document our database schema <img src="dataedo.png"/>
