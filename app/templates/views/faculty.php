@@ -21,20 +21,25 @@
 			<div id="events-table" class="row content" ng-show="period <= 2">
 				<strong class="label-course">Εβδομαδιαίο πρόγραμμα</strong><br/>
 				<ul>
-
 					<li ng-repeat="courseEvents in events">
-						<a target="_blank" ng-href="/#/course/{{courseEvents[0].courseData.courseId}}?period={{period}}">
-							<strong ng-bind="courseEvents[0].title"></strong>
-						</a>
+						<div ng-if="courseEvents[0].courseData"> <!-- if calendar event -->
+							<a target="_blank" ng-href="/#/course/{{courseEvents[0].courseData.courseId}}?period={{period}}">
+								<strong ng-bind="courseEvents[0].title"></strong>
+							</a>
 
-						<ul>
-							<li ng-repeat="event in courseEvents">
-								{{getDay(event.dayId)}} {{event.start.slice(11,16)}}-{{event.end.slice(11,16)}} <a ng-href="#/room/{{event.roomData.id}}">{{event.roomData.name}}</a> {{evemt.comment}}
-							</li>
-						</ul>
-
-					</li>
-
+							<ul>
+								<li ng-repeat="event in courseEvents">
+									{{getDay(event.dayId)}} {{event.start.slice(11,16)}}-{{event.end.slice(11,16)}} <a ng-href="#/room/{{event.roomData.id}}">{{event.roomData.name}}</a> {{event.comment}}
+								</li>
+							</ul>
+						</div> 
+						<div ng-if="!courseEvents[0].courseData">  <!-- if NOT calendar event -->
+							<a target="_blank" ng-href="/#/course/{{courseEvents[0].courseid}}?period={{period}}">
+								<strong ng-bind="courseEvents[0].coursetitle"></strong>
+							</a>
+						</div>
+				
+					</li>				
 				</ul>
 			</div>
 
@@ -50,7 +55,7 @@
 
 						<ul>
 							<li ng-repeat="event in courseEvents">
-								{{ event.start | date:'d/M' }} {{event.start.slice(11,16)}}-{{event.end.slice(11,16)}} <a ng-href="#/room/{{event.roomData.id}}">{{event.roomData.name}}</a> {{evemt.comment}}
+								{{ event.start | date:'d/M' }} {{event.start.slice(11,16)}}-{{event.end.slice(11,16)}} <a ng-href="#/room/{{event.roomData.id}}">{{event.roomData.name}}</a> {{event.comment}}
 							</li>
 						</ul>
 					</li>
@@ -67,17 +72,25 @@
 
 						<ul ng-show="periodId <= 2">
 							<li ng-repeat="courseEvents in events">
-								<a target="_blank" ng-href="/#/course/{{courseEvents[0].courseData.courseId}}?period={{periodId}}">
-									<strong ng-bind="courseEvents[0].title"></strong>
-								</a>
+								
+								<div ng-if="courseEvents[0].courseData">  <!-- if calendar event -->
+									<a target="_blank" ng-href="/#/course/{{courseEvents[0].courseData.courseId}}?period={{periodId}}">
+										<strong ng-bind="courseEvents[0].title"></strong>
+									</a>
 
-								<ul>
-									<li ng-repeat="event in courseEvents">
-										{{getDay(event.dayId)}} {{event.start.slice(11,16)}}-{{event.end.slice(11,16)}} <a ng-href="#/room/{{event.roomData.id}}">{{event.roomData.name}}</a> {{evemt.comment}}
-									</li>
-								</ul>
-
-							</li>
+									<ul>
+										<li ng-repeat="event in courseEvents">
+											{{getDay(event.dayId)}} {{event.start.slice(11,16)}}-{{event.end.slice(11,16)}} <a ng-href="#/room/{{event.roomData.id}}">{{event.roomData.name}}</a> {{event.comment}}
+										</li>
+									</ul>
+								</div>
+								<div ng-if="!courseEvents[0].courseData">  <!-- if NOT calendar event -->
+									<a target="_blank" ng-href="/#/course/{{courseEvents[0].courseid}}?period={{period}}">
+										<strong ng-bind="courseEvents[0].coursetitle"></strong>
+									</a>
+								</div>
+							
+							</li>					
 						</ul>
 
 						<ul ng-show="periodId> 2">
@@ -88,7 +101,7 @@
 
 								<ul>
 									<li ng-repeat="event in courseEvents">
-										{{ event.start | date:'d/M' }} {{event.start.slice(11,16)}}-{{event.end.slice(11,16)}} <a ng-href="#/room/{{event.roomData.id}}">{{event.roomData.name}}</a> {{evemt.comment}}
+										{{ event.start | date:'d/M' }} {{event.start.slice(11,16)}}-{{event.end.slice(11,16)}} <a ng-href="#/room/{{event.roomData.id}}">{{event.roomData.name}}</a> {{event.comment}}
 									</li>
 								</ul>
 

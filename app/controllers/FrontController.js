@@ -9,7 +9,7 @@
         $scope.mobile = true;
       }
 
-      $http.get("https://ws-ext.it.auth.gr/calendar/getPeriods").then(
+      $http.get("/calendar/getPeriods").then(
         function(response){
           $scope.periods = response.data;
           $scope.filterOptions = getFilterOptions($scope.periods);
@@ -26,7 +26,7 @@
             $scope.period = $scope.selected.value[0];
             $scope.year = $scope.selected.value[1];
 
-            var unitsUrl = "https://ws-ext.it.auth.gr/calendar/getCalendarUnits/tree?period=" + $scope.period;
+            var unitsUrl = "/calendar/getCalendarUnits/tree?period=" + $scope.period;
             $scope.loading = true;
             $http.get(unitsUrl).then(onUnitSuccess, onUnitError);
         }

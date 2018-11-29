@@ -23,7 +23,7 @@
       return temp;
     }
 
-    $http.get("https://ws-ext.it.auth.gr/calendar/getCourses")
+    $http.get("/calendar/getCourses")
       .then(
         function(response) {
           ctrl.unitCourses = response.data;

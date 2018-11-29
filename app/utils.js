@@ -1,5 +1,27 @@
+function convertMS(s) {
+	var d, h, m;
+    m = Math.floor(s / 60);
+    s = s % 60;
+    h = Math.floor(m / 60);
+    m = m % 60;
+    d = Math.floor(h / 24);
+    h = h % 24;
+    h += d * 24;
+    return addZero(h) + ':' + addZero(m);
+}
+
+
+        
+        
+function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+
 function getCurrentPeriodIndex(periods) {
-    var date = new Date();
+	var date = new Date();
     var month = date.getMonth() + 1;
     var period = 1;
 
@@ -19,7 +41,7 @@ function getCurrentPeriodIndex(periods) {
     {
         period = 3;
     }
-
+    
     var index = 0;
     for (var i = 0; i < periods.length; i++) {
       if (periods[i].periodTypeId == period){
@@ -76,7 +98,7 @@ function examIdToString(examId){
       examString = "Εαρινού εξαμήνου";
       break;
     default:
-      examString = examId + examString;
+      examString = examId + "ο "+ examString;
   }
   return examString;
 }
@@ -95,6 +117,32 @@ function getFilterOptions(periods){
     for (var i = 0; i < 5; i++) {
       period = periods[i];
       options.push({'value':[period.periodTypeId, period.year],'text': period.name + ' ' + period.year.toString() + ' - ' + (parseInt(period.year) + 1).toString()});
+    }
+    return options;
+}
+
+function getPeriodsWithYear(periods){
+
+	// SORT BY DATE
+    // function compare(a, b) {
+      // var startA = new Date(a.startDate);
+      // var startB = new Date(b.startDate);
+      // return startA.getTime() - startB.getTime();
+    // }
+	// 
+    // periods = periods.sort(compare);
+    
+    // SORT BY periodType
+    function compareType(a, b) {
+       return a.id - b.id;
+    }
+	periods = periods.sort(compareType);
+
+    var options = [];
+    for (var i = 0; i < 5; i++) {
+      period = periods[i];
+      // console.log(period);
+      options.push({'id':period.periodTypeId,'text': period.name + ' ' + period.year.toString() + ' - ' + (parseInt(period.year) + 1).toString(), 'startDate':period.startDate, 'endDate':period.endDate, 'year':period.year});
     }
     return options;
 }
@@ -148,3 +196,59 @@ function getTeacherLinks(staffData, period) {
 
   return html;
 }
+
+  function checkDate(ExpiryDate){ 
+  		if (ExpiryDate!=null){
+		    // check date and print message 
+		    if (isDate(ExpiryDate)) { 
+		        return true; 
+		    } 
+		    else { 
+		        return false;
+		    } 			          
+	   }
+	   else 
+	   	return false;
+	}
+			
+	function isDate(ExpiryDate) { 
+	    var objDate,  // date object initialized from the ExpiryDate string 
+	        mSeconds, // ExpiryDate in milliseconds 
+	        day,      // day 
+	        month,    // month 
+	        year;     // year 
+	    // date length should be 10 characters (no more no less) 
+	    if (ExpiryDate.length !== 10) { 
+	        return false; 
+	    } 
+	    // console.log(ExpiryDate);
+	    // third and sixth character should be '-' 
+	    if (ExpiryDate.substring(2, 3) !== '-' || ExpiryDate.substring(5, 6) !== '-') { 
+	        return false; 
+	    } 
+	    // extract month, day and year from the ExpiryDate (expected format is mm/dd/yyyy) 
+	    // subtraction will cast variables to integer implicitly (needed 
+	    // for !== comparing) 
+	    day = ExpiryDate.substring(0, 2) - 0; 
+	    month = ExpiryDate.substring(3, 5) - 1; // because months in JS start from 0 
+	    year = ExpiryDate.substring(6, 10) - 0; 
+	    // test year range 
+	    if (year < 1000 || year > 3000) { 
+	        return false; 
+	    } 
+	    // convert ExpiryDate to milliseconds 
+	    mSeconds = (new Date(year, month, day)).getTime(); 
+	    // initialize Date() object from calculated milliseconds 
+	    objDate = new Date(); 
+	    objDate.setTime(mSeconds); 
+	    // compare input date and parts from Date() object 
+	    // if difference exists then date isn't valid 
+	    if (objDate.getFullYear() !== year || 
+	        objDate.getMonth() !== month || 
+	        objDate.getDate() !== day) { 
+	        return false; 
+	    } 
+	    // otherwise return true 
+	    return true; 
+	}
+

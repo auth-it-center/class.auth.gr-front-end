@@ -16,7 +16,7 @@ var FacultyMembersController = function($http) {
     return temp;
   }
 
-  $http.get("https://ws-ext.it.auth.gr/calendar/getFacultyMembers")
+  $http.get("/calendar/getFacultyMembers")
     .then(
       function(response) {
         response.data.forEach(function(unit) {

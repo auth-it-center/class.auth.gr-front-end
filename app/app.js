@@ -1,6 +1,6 @@
 (function() {
 
-    var app = angular.module("rooms", ["ngRoute", "ui.calendar", "smart-table", "ngSanitize"]);
+    var app = angular.module("rooms", ["ngRoute", "ui.calendar", "smart-table", "ngSanitize", "720kb.datepicker"]);
 
     app.config(function($routeProvider, $locationProvider) {
         $routeProvider
@@ -13,20 +13,24 @@
                 controller: "CalendarController"
             })
             .when("/rooms", {
-                templateUrl: "app/templates/about.php",
+                templateUrl: "app/templates/rooms.php",
                 controller: "RoomsController",
                 reloadOnSearch: false
             })
-            .when("/about", {
-	            templateUrl: "app/templates/front.php",
-	            controller: "AboutController"
-	        })
+	    	.when("/about", {
+	        templateUrl: "app/templates/about.php",
+	        controller: "AboutController"
+		    })
+		    .when("/users", {
+              templateUrl: "views/users",
+              controller: "UsersController"
+            })
             .when("/myCalendar", {
-                templateUrl: "app/templates/myCalendar.php",
+                templateUrl: "/views/myCalendar",
                 controller: "CalendarController"
             })
             .when("/teacherCalendar", {
-              templateUrl: "app/templates/myCalendar.php",
+              templateUrl: "/views/myCalendar",
               controller: "CalendarController"
             })
             .when("/room/:roomId", {
@@ -46,10 +50,46 @@
               controller: "FacultyMembersController",
               controllerAs: "ctrl"
             })
+            .when("/facultyNew", {
+              templateUrl: "app/templates/facultymembersnew.php",
+              controller: "FacultyMembersNewController",
+            })
             .when("/courses", {
               templateUrl: "app/templates/courseslist.php",
               controller: "CoursesListController",
               controllerAs: "ctrl"
+            })
+            .when("/periods", {
+              templateUrl: "views/periods",
+              controller: "PeriodsController"
+            })
+             .when("/periodsUnit", {
+              templateUrl: "views/periodsUnit",
+              controller: "PeriodsUnitController"
+            })
+           .when("/excludedDates", {
+              templateUrl: "views/excludedDates",
+              controller: "ExcludedDatesController"
+            })
+           .when("/excludedDatesUnit", {
+              templateUrl: "views/excludedDatesUnit",
+              controller: "ExcludedDatesUnitController"
+            })
+          	.when("/reservations", {
+              templateUrl: "views/reservations",
+              controller: "ReservationsController"
+            })
+          	.when("/reservationsList", {
+              templateUrl: "views/reservationsList",
+              controller: "ReservationsListController"
+            })
+        	.when("/roomassign", {
+              templateUrl: "views/roomassign",
+              controller: "RoomAssignController"
+            })
+          	.when("/unitcourses", {
+              templateUrl: "views/unitCourses",
+              controller: "UnitCoursesController"
             })
             .otherwise({
                 redirectTo: "/"

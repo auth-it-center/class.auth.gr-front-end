@@ -380,11 +380,23 @@ body[data-mycourses="true"] #content_info_columns .filters .dropdowns{
 	background: rgb(237, 237, 237);
 }
 
+#users-table.table-panchara thead tr{
+	background: rgb(237, 237, 237);
+}
+
+
 #rooms-table.table-panchara thead tr > th{
 	border-bottom-color: transparent;
 }
+#users-table.table-panchara thead tr > th{
+	border-bottom-color: transparent;
+}
+
 
 #rooms-table.table-panchara thead tr > th:not(.sorting_disabled):hover{
+	border-bottom-color: rgb(255, 198, 0);
+}
+#users-table.table-panchara thead tr > th:not(.sorting_disabled):hover{
 	border-bottom-color: rgb(255, 198, 0);
 }
 
@@ -393,8 +405,17 @@ body[data-mycourses="true"] #content_info_columns .filters .dropdowns{
 	text-align:left;
 }
 
+#users-table_wrapper #users-table_filter,
+#users-table_wrapper #users-table_info{
+	text-align:left;
+}
+
 #rooms-table_wrapper #rooms-table_length,
 #rooms-table_wrapper #rooms-table_paginate{
+	text-align:right;
+}
+#users-table_wrapper #users-table_length,
+#users-table_wrapper #users-table_paginate{
 	text-align:right;
 }
 
@@ -510,8 +531,15 @@ table#rooms-table{
 	max-width: 100%;
 	position: relative;
 }
+table#users-table{
+	max-width: 100%;
+	position: relative;
+}
 
 table#rooms-table tr{
+	text-align: left;
+}
+table#users-table tr{
 	text-align: left;
 }
 

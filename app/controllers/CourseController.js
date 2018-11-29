@@ -1,7 +1,7 @@
-(function() {
+(function () {
   var app = angular.module("rooms");
 
-  var CourseController = function($scope, $http, $compile, $routeParams, $location){
+  var CourseController = function ($scope, $http, $compile, $routeParams, $location) {
     $scope.semesters = []; // List of semesters for current unit. Also depends on period being winter or spring
     $scope.eventSources = []; // Array of event sources. Will contain just the json feed object
     $scope.nEvents = 0; // Number of events for current unit and period
@@ -9,7 +9,8 @@
     $scope.updateView = false;
     $scope.loading = true;
 
-    $http.get("https://ws-ext.it.auth.gr/open/getCourseInfo/" + $routeParams["courseId"]).then(function(courseData){
+    $http.get("https://ws-ext.it.auth.gr/open/getCourseInfo/" + $routeParams["courseId"]).then(function (courseData) {
+      console.warn(courseData.data)
       courseData = courseData.data.course;
       var classId = courseData.classID;
 
@@ -23,7 +24,7 @@
         $scope.course.elearning = '<a class="btn btn-elearning" href="' + courseData.elearning_url + '" role="button">e-learning</a>';
       }
 
-      $http.get("https://ws-ext.it.auth.gr/open/getClassInfo/" + classId).then(function(classData){
+      $http.get("https://ws-ext.it.auth.gr/open/getClassInfo/" + classId).then(function (classData) {
         var teachers = classData.data.class.qa_data.general_data.class_info.instructors;
         classData = classData.data.class.qa_data.course_information_form_data;
         if (classData.course_content_syllabus) {
@@ -35,36 +36,40 @@
           $scope.course.teachers = teachers;
         }
 
-      }, function(error) {
+      }, function (error) {
         console.error("Error while getting course information");
       });
-    }, function(error) {
+    }, function (error) {
       console.error("Error while getting course classes information");
     });
 
-    $http.get("https://ws-ext.it.auth.gr/calendar/getPeriods").then(
-        function(response) {
-            $scope.periods = response.data;
-            $scope.periodInfo = response.data;
-            $scope.filterOptions = getFilterOptions($scope.periods);
-            $scope.filterOptions.unshift({value: [6, 'current'], text: 'Όλες οι περίοδοι'});
-            // At first use default values
-            $scope.selectedPeriod = $scope.filterOptions[0];
-            $scope.period = $scope.selectedPeriod.value[0];
-            $scope.year = $scope.selectedPeriod.value[1];
-            $scope.currentPeriod = $scope.period;
-            $scope.currentYear = $scope.year;
-            checkUrl();
-        }, function () {
-          console.error('Could not fetch period data!');
+    $http.get("/calendar/getPeriods").then(
+      function (response) {
+        $scope.periods = response.data;
+        $scope.periodInfo = response.data;
+        $scope.filterOptions = getFilterOptions($scope.periods);
+        $scope.filterOptions.unshift({
+          value: [6, 'current'],
+          text: 'Όλες οι περίοδοι'
+        });
+        // At first use default values
+        $scope.selectedPeriod = $scope.filterOptions[0];
+        $scope.period = $scope.selectedPeriod.value[0];
+        $scope.year = $scope.selectedPeriod.value[1];
+        $scope.currentPeriod = $scope.period;
+        $scope.currentYear = $scope.year;
+        checkUrl();
+      },
+      function () {
+        console.error('Could not fetch period data!');
       });
 
     $scope.periodChange = function periodChange() {
-        console.log("period change");
-        $scope.period = $scope.selectedPeriod.value[0];
-        $scope.year = $scope.selectedPeriod.value[1];
-        // Go to new url
-        $location.url("course/" + $routeParams["courseId"] + "?period=" + $scope.period + "&year=" + $scope.year);
+      console.log("period change");
+      $scope.period = $scope.selectedPeriod.value[0];
+      $scope.year = $scope.selectedPeriod.value[1];
+      // Go to new url
+      $location.url("course/" + $routeParams["courseId"] + "?period=" + $scope.period + "&year=" + $scope.year);
     }
 
     $scope.examIdToString = examIdToString;
@@ -100,11 +105,21 @@
     }
 
     function eventsToWeekSchedule(events) {
-      var daysOfWeek = {1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: []};
+      var daysOfWeek = {
+        1: [],
+        2: [],
+        3: [],
+        4: [],
+        5: [],
+        6: [],
+        7: []
+      };
       var eventsTmp = [];
       for (var i = 0; i < events.length; i++) {
         var event = events[i];
-        if (! daysOfWeek[event.dayId].find((currentEvent) => {return currentEvent.id == event.id}, event)) {
+        if (!daysOfWeek[event.dayId].find((currentEvent) => {
+            return currentEvent.id == event.id
+          }, event)) {
           event.day = getDay(event.dayId);
           daysOfWeek[event.dayId].push(event);
           eventsTmp.push(event);
@@ -155,12 +170,12 @@
           $scope.year = $scope.selectedPeriod.value[1];
         }
 
-        var url = "https://ws-ext.it.auth.gr/calendar/getCourseEvents/" + $routeParams["courseId"] +"/weekly";
+        var url = "/calendar/getCourseEvents/" + $routeParams["courseId"] + "/weekly";
         if ($scope.period != 6) {
           url += "?period=" + $scope.period;
         }
 
-        $http.get(url).then(function(events) {
+        $http.get(url).then(function (events) {
           if ($scope.period == 6) {
             $scope.events = groupEventsByPeriod(events.data);
           } else {
@@ -170,6 +185,7 @@
             }
           }
           if ($scope.events.length > 0) {
+            $scope.course = {}
             $scope.course.title = $scope.events[0].courseData.courseTitle;
             $scope.course.code = $scope.events[0].courseData.courseCode;
             $scope.course.semester = $scope.events[0].courseData.examID;
@@ -179,7 +195,7 @@
             }
           }
           $scope.loading = false;
-        }, function() {
+        }, function () {
           $scope.showError = true;
           console.error("Error while getting event data!");
         });

@@ -12,7 +12,7 @@
     // This is the json feed object that is used as event source. By using it, there is no need to manually make the
     // ajax call when there is a change in view or we move forward and backward in time; fullcalendar takes care of it
     $scope.jsonFeed = {
-      url: "https://ws-ext.it.auth.gr/calendar/getRoomEvents/" + $routeParams["roomId"], // TODO: hit real servers
+      url: "/calendar/getRoomEvents/" + $routeParams["roomId"], // TODO: hit real servers
       startParam: "fromDate",
       endParam: "toDate",
       beforeSend: function(jqXHR, settings) {
@@ -156,10 +156,10 @@
     }
 
     function getPeriodInfo() {
-      var periodsUrl = "https://ws-ext.it.auth.gr/calendar/getPeriods";
+      var periodsUrl = "/calendar/getPeriods";
       $http.get(periodsUrl).then(
         function(response) {
-          console.log('periodInfo');
+          // console.log('periodInfo');
           $scope.periodInfo = response.data;
 
         },
@@ -170,7 +170,7 @@
 
     function checkUrl() {
       $scope.period = getRoomPeriodIndex();
-      $http.get('https://ws-ext.it.auth.gr/calendar/getRoomUsageStatistics/' + $routeParams["roomId"] + "?period=" + $scope.period)
+      $http.get('/calendar/getRoomUsageStatistics/' + $routeParams["roomId"] + "?period=" + $scope.period)
            .then(function(response) {
               $scope.roomStatistics = response.data;
            }, function(error) {
@@ -204,10 +204,10 @@
       if (!room.buildingId) {
         console.warn("Invalid buildingId!");
       } else {
-        room.map = '<a class="btn btn-default btn-sm m-right" target="_blank" href="http://maps.auth.gr/?lang=el&showBlds=' + room.buildingId + '&open=' + room.buildingId + '&type=1"><span class="glyphicon glyphicon-map-marker"></span> Τοποθεσία στον χάρτη</a>';
+        room.map = '<a class="btn btn-default btn-sm m-right" target="_blank" href="https://maps.auth.gr/?lang=el&showBlds=' + room.buildingId + '&open=' + room.buildingId + '&type=1"><span class="glyphicon glyphicon-map-marker"></span> Τοποθεσία στον χάρτη</a>';
       }
       if (room.topView) {
-        room.plan = '<a class="btn btn-default btn-sm m-right" target="_blank" href="http://dc.ad.auth.gr/auth_management/DATA/PDF/' + room.topView + '"><span class="glyphicon glyphicon-th"></span> Κάτοψη</a>';
+        room.plan = '<a class="btn btn-default btn-sm m-right" target="_blank" href="https://dc.ad.auth.gr/auth_management/DATA/PDF/' + room.topView + '"><span class="glyphicon glyphicon-th"></span> Κάτοψη</a>';
       } else {
         //console.warn("Invalid pdfFolder!");
       }
@@ -219,14 +219,14 @@
       }
       if (room.photoFolder) {
         //console.warn("Invalid fotoFolder!");
-        room.img = '<a target="_blank" href="http://dc.ad.auth.gr/auth_management/DATA/PHOTOS/' + room.photoFolder + '/index.html">' + room.img + '</a>';
+        room.img = '<a target="_blank" href="https://dc.ad.auth.gr/auth_management/DATA/PHOTOS/' + room.photoFolder + '/index.html">' + room.img + '</a>';
       }
       return room;
     }
 
     $scope.getPeriodString = getPeriodString;
 
-    $http.get('https://ws-ext.it.auth.gr/calendar/getRoom/' + $routeParams["roomId"])
+    $http.get('/calendar/getRoom/' + $routeParams["roomId"])
       .then(function(response) {
         $scope.room = formatRoomData(response.data);
       }, function() {

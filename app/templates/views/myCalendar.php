@@ -1,7 +1,8 @@
+
 <div id="loading" ng-show="loading">
 	<img id="loading-image" src="/img/default.gif" alt="Loading..."/>
 </div>
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="CalendarController" ng-init="unitInit('<?php echo $user['authDepartmentId']?>')">
 	<div id="content_info_columns">
 
 				<div class="row filters">

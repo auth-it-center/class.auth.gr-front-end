@@ -30,7 +30,7 @@ angular
         // $scope.search = "";
 
         // var period = getRoomPeriodIndex();
-        // $http.get('https://ws-ext.it.auth.gr/calendar/getRoomsUsageStatistics?period=' + period)
+        // $http.get('/calendar/getRoomsUsageStatistics?period=' + period)
         //     .then(function(response) {
         //         $scope.roomsStatistics = response.data;
         //         ctrl.roomData = formatRoomData(ctrl.roomData);
@@ -39,14 +39,14 @@ angular
         //         console.error("Error while getting rooms statistics!");
         //     });
 
-        $http.get('https://ws-ext.it.auth.gr/calendar/getCalendarUnits') // TODO: HIT REAL SERVER
+        $http.get('/calendar/getCalendarUnits') // TODO: HIT REAL SERVER
             .then(function(responce) {
                 $scope.units = formatUnitData(responce.data);
             }, function(responce) {
                 $scope.error_units = "Error while getting unit data!";
             });
 
-        $http.get('https://ws-ext.it.auth.gr/calendar/getRooms') // TODO: HIT REAL SERVER
+        $http.get('/calendar/getRooms') // TODO: HIT REAL SERVER
             .then(function(responce) {
                 ctrl.roomData = formatRoomData(responce.data);
                 $scope.itemOptions.push({
@@ -133,10 +133,10 @@ angular
                 if (!room.buildingId) {
                     console.warn("Invalid buildingId!");
                 } else {
-                    room.map = '<a class="btn btn-default btn-sm m-right" target="_blank" href="http://maps.auth.gr/?lang=el&showBlds=' + room.buildingId + '&open=' + room.buildingId + '&type=1"><span class="glyphicon glyphicon-map-marker"></span> Τοποθεσία στον χάρτη</a>';
+                    room.map = '<a class="btn btn-default btn-sm m-right" target="_blank" href="https://maps.auth.gr/?lang=el&showBlds=' + room.buildingId + '&open=' + room.buildingId + '&type=1"><span class="glyphicon glyphicon-map-marker"></span> Τοποθεσία στον χάρτη</a>';
                 }
                 if (room.topView) {
-                    room.plan = '<a class="btn btn-default btn-sm m-right" target="_blank" href="http://dc.ad.auth.gr/auth_management/DATA/PDF/' + room.topView + '"><span class="glyphicon glyphicon-th"></span> Κάτοψη</a>';
+                    room.plan = '<a class="btn btn-default btn-sm m-right" target="_blank" href="https://dc.ad.auth.gr/auth_management/DATA/PDF/' + room.topView + '"><span class="glyphicon glyphicon-th"></span> Κάτοψη</a>';
                 } else {
                     //console.warn("Invalid pdfFolder!");
                 }
@@ -148,7 +148,7 @@ angular
                 }
                 if (room.photoFolder) {
                     //console.warn("Invalid fotoFolder!");
-                    room.img = '<a target="_blank" href="http://dc.ad.auth.gr/auth_management/DATA/PHOTOS/' + room.photoFolder + '/index.html" class="first_img">' + room.img + '</a>';
+                    room.img = '<a target="_blank" href="https://dc.ad.auth.gr/auth_management/DATA/PHOTOS/' + room.photoFolder + '/index.html" class="first_img">' + room.img + '</a>';
                 }
                 // push the unique room types into an array
                 if (roomTypes.indexOf(room.type) == -1) {

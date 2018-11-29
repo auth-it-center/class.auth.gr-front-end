@@ -34,6 +34,9 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="//cdn.it.auth.gr/libraries/bootstrap/css/bootstrap.min.css">
     <script src="//cdn.it.auth.gr/libraries/bootstrap/js/bootstrap.min.js"></script>
+    <!--  Bootstrap Datetimepicker-->
+    <!-- <link rel="stylesheet" href="js/bootstrap/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+    <script src="js/bootstrap/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script> -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -62,8 +65,18 @@
     <script type="text/javascript" src="app/controllers/CourseController.js"></script>
     <script type="text/javascript" src="app/controllers/FacultyController.js"></script>
     <script type="text/javascript" src="app/controllers/FacultyMembersController.js"></script>
+    <script type="text/javascript" src="app/controllers/FacultyMembersNewController.js"></script>
     <script type="text/javascript" src="app/controllers/CoursesListController.js"></script>
-
+    <script type="text/javascript" src="app/controllers/UsersController.js"></script>
+    <script type="text/javascript" src="app/controllers/PeriodsController.js"></script>
+    <script type="text/javascript" src="app/controllers/PeriodsUnitController.js"></script>
+    <script type="text/javascript" src="app/controllers/ExcludedDatesController.js"></script>
+    <script type="text/javascript" src="app/controllers/ExcludedDatesUnitController.js"></script>
+    <script type="text/javascript" src="app/controllers/AboutController.js"></script>
+    <script type="text/javascript" src="app/controllers/ReservationsController.js"></script>
+    <script type="text/javascript" src="app/controllers/ReservationsListController.js"></script>
+    <script type="text/javascript" src="app/controllers/RoomAssignController.js"></script>
+    <script type="text/javascript" src="app/controllers/UnitCoursesController.js"></script>
 
     <!-- Application CSS files -->
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
@@ -73,13 +86,30 @@
     <link href="css/dataTable.css" rel="stylesheet" type="text/css" />
 
     <script src="app/utils.js"></script>
-
+    
+    <!-- X-editable -->
+    <!-- <link href="js/angular-xeditable-0.8.1/css/xeditable.css" rel="stylesheet"/>
+	<script src="js/angular-xeditable-0.8.1/js/xeditable.js"></script> -->
+	<!-- nya-bootstrap-select -->
+	<!-- <link href="js/nya-bootstrap-select/css/nya-bs-select.css" rel="stylesheet"> -->
+	<!-- <script src="js/nya-bootstrap-select/js/nya-bs-select.js"></script> -->
+	
+	<!-- <script type="text/javascript" src="js/angular/angularjs-dropdown-multiselect.js"></script> -->
+	<script type="text/javascript" src="js/angular/ui-bootstrap-tpls-2.5.0.min.js"></script>
+	<!--  https://www.npmjs.com/package/angularjs-datepicker -->
+	<link href="js/angular/angular-datepicker.css" rel="stylesheet"/>
+	<script src="js/angular/angular-datepicker.js"></script> 
+	
+  	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+  	<link href="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/bootstrap-clockpicker.css" rel="stylesheet" />
+   	<script src="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/bootstrap-clockpicker.js"></script>
 </head>
 
 <body ng-app="rooms">
-    <?php include( "header.php"); ?>
+    <?php echo $this->fetch('header.phtml', ['user' => $user]); ?>
     <div id="content" ng-view></div>
-    <?php include( "footer.php"); ?>
+    <?php echo $this->fetch('footer.phtml', ['user' => $user]); ?>
 </body>
 
 </html>
