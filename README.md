@@ -28,6 +28,8 @@ The solution is currently based on a mix of different technologies:
 Currently, only the front-end code is available. We intend to gradually open source the whole system to allow for a fully stand-alone solution.
 
 ## class.auth.gr Images
+<img width="300" alt="class home screen" src="/screenshots/homeScreen.png"/>
+
 
 ## License
 GNU General Public License v3.0
