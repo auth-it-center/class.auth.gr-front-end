@@ -28,7 +28,14 @@ The solution is currently based on a mix of different technologies:
 Currently, only the front-end code is available. We intend to gradually open source the whole system to allow for a fully stand-alone solution.
 
 ## class.auth.gr Images
-<img width="300" alt="class home screen" src="/screenshots/homeScreen.png"/>
+### Home Screen
+<img width="500" alt="class home screen" src="/screenshots/homeScreen.png"/>
+
+### Public Calendar
+<img width="500" alt="public calendar" src="/screenshots/publicCalendarScreen.png"/>
+
+### University Venues
+<img width="500" alt="public calendar" src="/screenshots/universityVenuesScreen.png"/>
 
 
 ## License
