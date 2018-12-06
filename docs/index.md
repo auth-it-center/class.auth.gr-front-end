@@ -27,3 +27,11 @@ The solution is currently based on a mix of different technologies:
 
 Currently, only the front-end code is available. We intend to gradually open source the whole system to allow for a fully stand-alone solution.
 
+## class.auth.gr Images
+
+## License
+GNU General Public License v3.0
+
+See <a href ="https://github.com/auth-it-center/class.auth.gr-front-end/blob/master/LICENSE">LICENSE</a> to see the full text.
+
+
