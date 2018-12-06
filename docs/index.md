@@ -15,8 +15,15 @@ In its heart, the solution is a calendaring application to publish the timetable
 * instructors can login to view or export their personalized schedule, according to class teaching assignements, but they can also cancel and reschedule a session, based on availability of venues.
 * venue information is also publicly available, with basic info about venue schedule, capacity, location, photos and maps.
 
-## Technology
-The solution is currently based on a mix of different technologies. AngularJS is employed for the publicly available front-end, revolving around the [FullCalendar](https://fullcalendar.io/) javascript lib. Java is utilized for the department registrar scheduling interfaces. The MSSQL student information system DB is queried for course, class and instructor info. A separate custom MySQL DB is queried for session scheduling and venue info. An intermediate JSON API provides all scheduled session info to the front-end.
+## Technologies
+The solution is currently based on a mix of different technologies:
+ - AngularJS (1.5), Javascript and HTML are employed for the publicly available front-end
+ - PHP, Slim3 microframework are used for the back-end
+ - FullCalendar(https://fullcalendar.io/) is the core library used for displaying & handling the calendar events
+ - mPDF library is used for printing/exporting the calendar schedule in pdf format
+ - SimpleSAMLphp is used for authentication
+ - MySQL & MSSQL. The MSSQL student information system DB is queried for course, class and instructor info. A separate custom MySQL DB is queried for session scheduling and venue info. 
+ - An intermediate (custom made) JSON API provides all scheduled session info to the front-end.
 
 Currently, only the front-end code is available. We intend to gradually open source the whole system to allow for a fully stand-alone solution.
 
