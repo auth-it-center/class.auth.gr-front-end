@@ -35,7 +35,27 @@ Currently, only the front-end code is available. We intend to gradually open sou
 <img width="500" alt="public calendar" src="/screenshots/publicCalendarScreen.png"/>
 
 ### University Venues
-<img width="500" alt="public calendar" src="/screenshots/universityVenuesScreen.png"/>
+<img width="500" alt="university venues" src="/screenshots/universityVenuesScreen.png"/>
+
+### Teachers Catalogue
+<img width="500" alt="teachers catalogue" src="/screenshots/facultyCatalogScreen.png"/>
+
+### Courses Catalogue
+<img width="500" alt="courses catalogue" src="/screenshots/coursesCatalogScreen.png"/>
+
+### Reservations
+<img width="500" alt="reservations" src="/screenshots/reservationsListScreen.png"/>
+
+### Room Management
+<img width="500" alt="room management" src="/screenshots/roomManagementScreen.png"/>
+
+### Administrator of class.auth.gr
+<img width="500" alt="administrators" src="/screenshots/administratorsScreen.png"/>
+
+### Unit's periods
+<img width="500" alt="periods" src="/screenshots/periodsScreen.png"/>
+
+
 
 
 ## License
