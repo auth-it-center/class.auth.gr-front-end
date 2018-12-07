@@ -74,7 +74,7 @@
 			</span>
 		</div>
 
-		<div class="dropdown pull-right" ng-show="unitHasCalendar" style="padding-left: 3px; padding-bottom: 1em;" ng-controller="ExportController">
+		<div class="dropdown pull-right" ng-show="unitHasCalendar" style="padding-left: 5px; padding-bottom: 1em; padding-top: 12px;" ng-controller="ExportController">
 			<button class="btn btn-warning dropdown-toggle" type="button"
 				id="export-div" data-toggle="dropdown" aria-expanded="true">
 			<span class="glyphicon glyphicon glyphicon-download"></span>&nbsp;Εξαγωγή προγράμματος
